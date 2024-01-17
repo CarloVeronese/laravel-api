@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\ProjectController;
+use App\Http\Controllers\Api\TypeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/projects', [ProjectController::class, 'index']);
 
 Route::get('/projects/{project:id}', [ProjectController::class, 'show']);
+
+Route::get('/types/{type:slug}', [TypeController::class, 'show']);
